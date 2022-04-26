@@ -1,0 +1,5 @@
+4682_left.jpg
+4682_right.jpg
+Name: Mr. Test Patient 
+Age: 25
+Confirmed Diabetes: No
