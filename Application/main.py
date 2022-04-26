@@ -205,5 +205,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # pyinstaller --noconfirm --onedir --console --add-data "C:/Users/sheff/Desktop/code/Application;." --add-data "C:/Users/sheff/Desktop/code/Application/classifier;classifier/" --add-data "C:/Users/sheff/Desktop/code/Application/detector;detector/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/utils;utils/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/models;models/" --paths "C:/Users/sheff/Desktop/code/Application" --paths "C:/Users/sheff/Desktop/code/Application/classifier" --paths "C:/Users/sheff/Desktop/code/Application/detector" --paths "C:/Users/sheff/Desktop/code/Application/detector/models" --paths "C:/Users/sheff/Desktop/code/Application/detector/utils"  "C:/Users/sheff/Desktop/code/Application/main.py"
