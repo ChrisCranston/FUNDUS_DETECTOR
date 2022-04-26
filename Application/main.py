@@ -39,8 +39,8 @@ def main():
             sg.Text("Load Patient Information", pad=5),
             sg.Input(size=(25, 1), key="-FILE-"),
             sg.FileBrowse(file_types=file_types, initial_folder=target, tooltip="Browse for a patient file, currently using a .txt file"),
-            sg.Button("Load Images"),
-            sg.Button("Reset App"),
+            sg.Button("Load Images", tooltip="Load images from the path and display"),
+            sg.Button("Reset App", tooltip="Reset app to default layout"),
         ],
         [
             sg.Image(size=(512, 512), background_color="white", key="-IMAGE1-"),
@@ -52,17 +52,17 @@ def main():
             sg.Text("Image Right:", key="-IMAGE_RIGHT_TEXT-", expand_x=False)
         ],
         [ 
-            sg.Checkbox('Show Confidence Values', default=True, key="-SHOWCONF-"),            
+            sg.Checkbox('Show Confidence Values', default=True, key="-SHOWCONF-", tooltip="If selected, include confidence values when perfoming inferencing."),            
         ],
         [ 
             sg.Text("Confidence Threshold:"),
             sg.Slider(range=(0, 1), default_value=0.2, size=(50, 10), orientation="h",
-                enable_events=True, resolution=0.05, key="-CONF_SLIDER-")
+                enable_events=True, resolution=0.05, key="-CONF_SLIDER-", tooltip="Control the confidence threshold when performing inferencing.")
         ],
         [
-            sg.Button("Perform Inferencing", disabled=True),
+            sg.Button("Perform Inferencing", disabled=True, tooltip="Perform inferencing and show inferenced images"),
             sg.VSeparator(),
-            sg.Button("Show/Hide Results", disabled=True),
+            sg.Button("Show/Hide Results", disabled=True, tooltip="Switch between images with and without labelling."),
         ],
         [
             sg.Multiline(key="patient_info", autoscroll=False,
@@ -206,4 +206,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-    # pyinstaller --noconfirm --onedir --console --add-data "C:/Users/sheff/Desktop/code/Application;." --add-data "C:/Users/sheff/Desktop/code/Application/classifier;classifier/" --add-data "C:/Users/sheff/Desktop/code/Application/detector;detector/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/utils;utils/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/models;models/" --hidden-import ""PIL.ExifTags"" --paths "C:/Users/sheff/Desktop/code/Application/detector" --paths "C:/Users/sheff/Desktop/code/Application/classifier"  "C:/Users/sheff/Desktop/code/Application/main.py"
+    # pyinstaller --noconfirm --onedir --console --add-data "C:/Users/sheff/Desktop/code/Application;." --add-data "C:/Users/sheff/Desktop/code/Application/classifier;classifier/" --add-data "C:/Users/sheff/Desktop/code/Application/detector;detector/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/utils;utils/" --add-data "C:/Users/sheff/Desktop/code/Application/detector/models;models/" --paths "C:/Users/sheff/Desktop/code/Application" --paths "C:/Users/sheff/Desktop/code/Application/classifier" --paths "C:/Users/sheff/Desktop/code/Application/detector" --paths "C:/Users/sheff/Desktop/code/Application/detector/models" --paths "C:/Users/sheff/Desktop/code/Application/detector/utils"  "C:/Users/sheff/Desktop/code/Application/main.py"

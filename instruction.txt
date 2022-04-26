@@ -1,3 +1,0 @@
-
-python train.py --img 512 --cfg yolov5s.yaml --hyp hyp.scratch.yaml --batch 32 --epochs 100 --data eye.yaml --weights yolov5s.pt --workers 24 --name eye_de
-python detect.py --source ../../yolov5project/images/test/ --weights runs/train/eye_det12/weights/best.pt --conf 0.25 --name eye_det --line-thickness 1 --hide-conf --imgsz 512

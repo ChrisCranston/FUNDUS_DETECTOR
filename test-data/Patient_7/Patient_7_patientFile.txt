@@ -1,0 +1,5 @@
+4051_left.jpg
+4051_right.jpg
+Name: Mrs. Patient Client
+Age: 34
+Confirmed Diabetes: Yes
