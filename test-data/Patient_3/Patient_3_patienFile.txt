@@ -1,5 +1,5 @@
-229_left.jpg
 229_right.jpg
+229_left.jpg
 Name: Mrs. Existing Patient 
 Age: 49
 Confirmed Diabetes: Yes

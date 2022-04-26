@@ -1,5 +1,5 @@
-157_left.jpg
 157_right.jpg
+157_left.jpg
 Name: Mr. New Patient 
 Age: 36
 Confirmed Diabetes: Yes

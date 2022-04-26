@@ -1,5 +1,5 @@
-4234_left.jpg
 4234_right.jpg
+4234_left.jpg
 Name: Ms. Test Patient 
 Age: 16
 Confirmed Diabetes: No

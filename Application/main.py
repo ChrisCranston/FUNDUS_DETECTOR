@@ -43,9 +43,8 @@ def main():
             sg.Button("Reset App", tooltip="Reset app to default layout"),
         ],
         [
-            sg.Image(size=(512, 512), background_color="white", key="-IMAGE1-"),
             sg.Image(size=(512, 512), background_color="white", key="-IMAGE0-"),
-
+            sg.Image(size=(512, 512), background_color="white", key="-IMAGE1-"),
         ],
         [
             sg.Text("Image Left:", key="-IMAGE_LEFT_TEXT-", expand_x=False),
@@ -95,6 +94,7 @@ def main():
                 temp = open(text_file, 'r').read().splitlines()
                 for x, line in enumerate(temp):
                     if (x < 2):
+                        print(plain_images)
                         image_path = folder+"/"+line
                         image = Image.open(image_path)
                         image.thumbnail((512, 512))
@@ -103,9 +103,9 @@ def main():
                         plain_images.append(image_path)
                         #update images and file location strings
                         if x == 0:
-                            window['-IMAGE_RIGHT_TEXT-'].update(image_path)
-                        else:
                             window['-IMAGE_LEFT_TEXT-'].update(image_path)
+                        else:
+                            window['-IMAGE_RIGHT_TEXT-'].update(image_path)
                         target_window = "-IMAGE"+str(x)+"-"
                         window[target_window].update(data=bio.getvalue(),visible=True)
                     else:
@@ -132,10 +132,13 @@ def main():
                         #update images and file location strings
                         if x == 0:
                             window['-IMAGE_RIGHT_TEXT-'].update(result_image)
+                            inferenced_images.append(result_image)
+                            target_window = "-IMAGE1-"
                         else:
                             window['-IMAGE_LEFT_TEXT-'].update(result_image)
-                        inferenced_images.append(result_image)
-                        target_window = "-IMAGE"+str(x)+"-"
+                            inferenced_images.append(result_image)
+                            target_window = "-IMAGE0-"
+                        
                         window[target_window].update(data=bio.getvalue())
                         inference_showing = True
 
@@ -179,10 +182,11 @@ def main():
                         bio = BytesIO()
                         image.save(bio, format="PNG")
                         if x == 0:
-                            window['-IMAGE_LEFT_TEXT-'].update(result_image)
-                        else:
                             window['-IMAGE_RIGHT_TEXT-'].update(result_image)
-                        target_window = "-IMAGE"+str(x)+"-"
+                            target_window = "-IMAGE1-"
+                        else:
+                            window['-IMAGE_LEFT_TEXT-'].update(result_image)
+                            target_window = "-IMAGE0-"
                         window[target_window].update(data=bio.getvalue())
                         inference_showing = True
 
@@ -196,8 +200,10 @@ def main():
             window["Show/Hide Results"].update(disabled=True)
             window['-IMAGE_RIGHT_TEXT-'].update("")
             window['-IMAGE_LEFT_TEXT-'].update("")
-            window["-IMAGE1-"].update(visible=False)
             window["-IMAGE0-"].update(visible=False)
+            window["-IMAGE1-"].update(visible=False)
+            
+            
             
     # Close GUI if loop ends
     window.close()
