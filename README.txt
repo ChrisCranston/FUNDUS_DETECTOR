@@ -17,7 +17,7 @@ NOTE: first run of the app can take a few second to load.
 
 NOTE: the unzipped folder of the application is approximately 3.5Gb due to the use of tensorflow and torch.
       Any issues with the zip file a second copy is available here:
-		https://drive.google.com/file/d/16KjYg65rOsaqpiaolQvllrstkcD4gtLx/view?usp=sharing 
+		https://drive.google.com/drive/folders/1oKWyL5cPLDNiOolbVFVkyWk9-45_pRN7?usp=sharing
 
 NOTE: the first run of the application using the packaged files takes approximately 30 seconds. 
 
