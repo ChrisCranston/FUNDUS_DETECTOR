@@ -94,7 +94,6 @@ def main():
                 temp = open(text_file, 'r').read().splitlines()
                 for x, line in enumerate(temp):
                     if (x < 2):
-                        print(plain_images)
                         image_path = folder+"/"+line
                         image = Image.open(image_path)
                         image.thumbnail((512, 512))
@@ -144,19 +143,19 @@ def main():
 
                 # Perform fuzzy inferencing with results of yolov5
                 fuz_result = fuzzy_classifier(haemorrhage_count,exudate_count)
-                if (fuz_result):
-                    if (fuz_result <= 33):
-                        window['-RESULT-'].update("R0", text_color="green")
-                        window['-NDESP-'].update(text_color="green")
-                        window['-REC-'].update("Recommended action: Continue with regular screening period.", text_color="green")
-                    elif (fuz_result <= 66):
-                        window['-RESULT-'].update("R1", text_color="orange")
-                        window['-NDESP-'].update(text_color="orange")
-                        window['-REC-'].update("Recommended action: Increase screening regularity.", text_color="orange")
-                    else:
-                        window['-RESULT-'].update("R2", text_color="red")
-                        window['-NDESP-'].update(text_color="red")
-                        window['-REC-'].update("Recommended action: Referall to hospital.", text_color="red")
+                if (fuz_result == 0):
+                    window['-RESULT-'].update("R0", text_color="green")
+                    window['-NDESP-'].update(text_color="green")
+                    window['-REC-'].update("Recommended action: Continue with regular screening period.", text_color="green")
+                elif (fuz_result == 1):
+                    window['-RESULT-'].update("R1", text_color="orange")
+                    window['-NDESP-'].update(text_color="orange")
+                    window['-REC-'].update("Recommended action: Increase screening regularity.", text_color="orange")
+                else:
+                    window['-RESULT-'].update("R2", text_color="red")
+                    window['-NDESP-'].update(text_color="red")
+                    window['-REC-'].update("Recommended action: Referall to hospital.", text_color="red")
+        ...
 
         # Show inference results on / off switch
         if event == "Show/Hide Results":

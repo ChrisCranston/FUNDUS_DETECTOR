@@ -40,6 +40,7 @@ The table below shows the expected results for each patient if the 0.20 default 
 | 6        | R0              |
 | 7        | R0              |
 | 8        | R1              |
+| 9        | R2              |
 -----------------------------
 
 NOTE: The entirety of the image dataset used was not included in an effort to reduce size of zip, i attempted to capture a range of examples in the tests but the dataset is available at:
